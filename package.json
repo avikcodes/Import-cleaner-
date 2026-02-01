@@ -1,8 +1,9 @@
 {
   "name": "tidy-imports",
   "displayName": "Tidy Imports",
-  "description": "A VS Code extension for removing unused imports",
-  "version": "0.0.1",
+  "publisher": "avikghosh",
+  "description": "Safely remove unused import statements from JavaScript and TypeScript files",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.74.0"
   },
