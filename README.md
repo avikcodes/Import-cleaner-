@@ -1,92 +1,50 @@
-```markdown
 # Tidy Imports
 
-> Automatically remove unused imports from your JavaScript and TypeScript files.
+A VS Code extension that automatically removes unused imports from your JavaScript, TypeScript, and React files.
 
-## What It Does
+## Problem
 
-Scans your project and removes import statements you're not actually using - making your code cleaner and your bundles smaller.
+Import statements accumulate over time during development, leaving unused imports that clutter your codebase and impact readability.
 
-## Features
+## How It Works
 
-- 🧹 One-click cleanup for entire project
-- ⚡ Fast scanning using TypeScript compiler
-- 👀 Preview before removing
-- ✅ Supports JavaScript & TypeScript
-- 🎯 Safe - only removes truly unused imports
+1. Scans your workspace for supported file types
+2. Analyzes each file to identify unused imports
+3. Removes only the unused import statements
+4. Preserves all other code unchanged
+
+## Supported File Types
+
+- `.js` - JavaScript
+- `.jsx` - JavaScript React
+- `.ts` - TypeScript  
+- `.tsx` - TypeScript React
 
 ## Usage
 
-1. Open Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
-2. Type "Tidy Imports: Clean Project"
-3. Review unused imports
-4. Click "Remove All" or select specific files
-5. Done!
+Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`) and run:
 
-## Example
-
-**Before:**
-```javascript
-import React from 'react';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import lodash from 'lodash';
-
-function App() {
-  const [count, setCount] = useState(0);
-  return <div>{count}</div>;
-}
+```
+Tidy Imports: Remove Unused Imports
 ```
 
-**After:**
-```javascript
-import React from 'react';
-import { useState } from 'react';
+## Behavior
 
-function App() {
-  const [count, setCount] = useState(0);
-  return <div>{count}</div>;
-}
-```
+- **Confirmation**: Shows the number of files that will be processed and asks for confirmation
+- **Scope**: Operates on your entire workspace
+- **Safety**: Only removes import statements, never touches your business logic
+- **Feedback**: Provides progress updates and completion summary
 
-## Installation
+## Limitations
 
-```bash
-# Install from VS Code Marketplace
-ext install tidy-imports
-```
-
-Or search "Tidy Imports" in VS Code Extensions.
+- Static analysis only (doesn't handle dynamic imports)
+- Complex import patterns may not be detected
+- Always review changes before committing
 
 ## Requirements
 
-- VS Code 1.85.0 or higher
-- Node.js project with JavaScript/TypeScript files
-
-## Tech Stack
-
-- TypeScript
-- VS Code Extension API
-- TypeScript Compiler API
-- Fast-glob for file scanning
-
-## Roadmap
-
-- [x] JavaScript & TypeScript support
-- [ ] Python support
-- [ ] Go support
-- [ ] Auto-cleanup on save option
-- [ ] CI/CD integration
-
-## License
-
-MIT
-
-## Contributing
-
-PRs welcome! See [CONTRIBUTING.md](CONTRIBUTING.md)
+- VS Code 1.74.0 or higher
 
 ---
 
-**Made with ❤️ for developers who hate messy imports**
-```
+*Keep your imports clean, keep your code readable.*
