@@ -1,11 +1,16 @@
 {
   "name": "tidy-imports",
   "displayName": "Tidy Imports",
+  "icon": "media/icon.png",
   "publisher": "avikghosh",
   "description": "Safely remove unused import statements from JavaScript and TypeScript files",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.74.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avikcodes/Tidy-Imports.git"
   },
   "categories": [
     "Other"
